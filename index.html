@@ -26,7 +26,8 @@
                 <p class="text-center mx-auto justify-center text-white mb-10">Unleash Your Keyboard Kung Fu : Press
                     “Enter” to
                     Play</p>
-                <button onclick="play()" class="btn bg-white text-gray-700 hover:text-white   mx-auto items-center">Play now</button>
+                <button onclick="play()" class="btn bg-white text-gray-700 hover:text-white   mx-auto items-center">Play
+                    now</button>
             </div>
         </section>
         <!-- playground -->
@@ -83,16 +84,18 @@
                 <!--  -->
 
                 <!-- HUD -->
-                <div class="flex justify-between w-full mx-auto">
-                    <button class="btn px-4 rounded-full bg-fuchsia-800 items-center justify-center mx-52">
+                <div class="flex justify-between w-full mx-auto ">
+                    <!-- display life -->
+                    <button class="btn px-4 rounded-full bg-purple-500 items-center justify-center mx-52 text-white">
                         Life
                         <img src="./images/Group 23.svg" alt="">
-                        <span>1</span>
+                        <span id="current-life">5</span>
                     </button>
-                    <button class="btn px-4 rounded-full bg-[#360490] items-center justify-center mx-52">
+                    <!-- display score -->
+                    <button class="btn px-4 rounded-full bg-[#360490] items-center justify-center mx-52 text-white">
                         Score
                         <img src="./images//monetization_on.svg" alt="">
-                        <span>1</span>
+                        <span id="current-score">0</span>
                     </button>
 
                 </div>

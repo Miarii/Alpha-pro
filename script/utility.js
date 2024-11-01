@@ -13,6 +13,22 @@ function setBackgroundColorById(elementID) {
     element.classList.add('bg-orange-400')
 }
 
+function removeBackgroundColorById(elementID) {
+    const element = document.getElementById(elementID)
+    element.classList.remove('bg-orange-400')
+}
+
+function getTextElementValueById(elementID) {
+    const elementValueText = document.getElementById(elementID)
+    const value = parseInt(elementValueText.innerText)
+    return value
+}
+function setTextElementValueById(elementID, value) {
+    const elementValueText = document.getElementById(elementID)
+    elementValueText.innerText = value
+}
+
+
 function getRandomAlphabet() {
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz'
     const alphabets = alphabetString.split('')
@@ -23,5 +39,5 @@ function getRandomAlphabet() {
 
     const alphabet = alphabets[index]
     // console.log(index, alphabet)
-    return alphabet; 
+    return alphabet;
 }

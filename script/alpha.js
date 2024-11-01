@@ -23,31 +23,71 @@ function handleKeyboardKeyupEvent(event) {
 
     // compare the pressed key with expected alphabet
     if (pressedKey === expectedAlphabet) {
-        console.log('you win')
+        console.log('you got a point!!')
+
+        const currentScore = getTextElementValueById('current-score')
+        console.log('current score is', currentScore)
+        const udatedScore = currentScore + 1
+        setTextElementValueById('current-score', udatedScore)
+
+
+
+        // =================================================================
+        // update the score
+        // const currentScore = document.getElementById('current-score')
+        // const currentScoreNumber = parseInt(currentScore.innerText)
+        // currentScore.innerText = newScore
+        // // start a new round
+        // continueGame()
+        // removeBackgroundColorById(expectedAlphabet)
+        //==================================================================
+
     }
     else {
-        console.log('you lose')
+        console.log('you lost a point!!')
+        // // update the life count
+        // const currentLife = document.getElementById('current-life')
+        // const currentLifeNumber = parseInt(currentLife.innerText)
+        // const newLife = currentLifeNumber - 1
+        // currentLife.innerText = newLife 
+
+
+        // // check if the life count is 0
+
+
+        const currentLife = getTextElementValueById('current-life')
+        console.log('current life is', currentLife)
+        const udatedLife = currentLife - 1
+        setTextElementValueById('current-life', udatedLife)
+
+        if(currentLife === 0){
+            alert('Game Over')
+            window.location.reload()
+        }
+
+
+
     }
 }
-    // capture keyboard button press event
-    document.addEventListener('keydown', handleKeyboardKeyupEvent)
+// capture keyboard button press event
+document.addEventListener('keydown', handleKeyboardKeyupEvent)
 
 
-    function continueGame() {
-        // STEP 1: generate a random alphabet
-        const alphabet = getRandomAlphabet()
-        console.log('you alphabet is', alphabet)
-        // STEP 2: set random aalphabet to the box
-        const currentAlphabetElement = document.getElementById('current-alphabet')
-        currentAlphabetElement.innerText = alphabet
-        // set background color in kb
-        setBackgroundColorById(alphabet)
+function continueGame() {
+    // STEP 1: generate a random alphabet
+    const alphabet = getRandomAlphabet()
+    console.log('you alphabet is', alphabet)
+    // STEP 2: set random aalphabet to the box
+    const currentAlphabetElement = document.getElementById('current-alphabet')
+    currentAlphabetElement.innerText = alphabet
+    // set background color in kb
+    setBackgroundColorById(alphabet)
 
-    }
+}
 
 
-    function play() {
-        hideElementById("home-screen")
-        showElementById("playgroundx")
-        continueGame()
-    }
+function play() {
+    hideElementById("home-screen")
+    showElementById("playgroundx")
+    continueGame()
+}
