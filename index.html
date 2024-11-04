@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Clash Pro</title>
+
+    <!-- daisyui and tailwind css link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- custom css link -->
+    <link rel="stylesheet" href="./style.css">
+
+
+</head>
+
+<body class="poppins-regular">
+    <main class="min-h-screen bg-[#010313] bg-[url(./images/background.png)] bg-center bg-no-repeat">
+        <!-- home screen -->
+        <section id="home-screen" class="home min-h-screen flex items-center justify-center ">
+            <div class="flex flex-col items-center">
+                <h1 class="text-9xl text-center mx-auto justify-center text-white anton-regular mb-5">ALPHABET CLASH
+                </h1>
+                <p class="text-center mx-auto justify-center text-white mb-10">Unleash Your Keyboard Kung Fu : Press
+                    “Enter” to
+                    Play</p>
+                <button onclick="play()" class="btn bg-white text-gray-700 hover:text-white   mx-auto items-center">Play
+                    now</button>
+            </div>
+        </section>
+        <!-- playground -->
+        <section id="playgroundx" class="play-ground hidden">
+            <!-- playground container -->
+            <div class="flex flex-col items-center gap-20 pt-20">
+                <!-- screen -->
+                <div
+                    class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3] mx-auto">
+                    <div class="flex justify-center">
+                        <p class="text-center bg-[#2F2941] px-6 pb-4 rounded-b-xl text-white">Don't watch keyboard while
+                            playing...</p>
+                    </div>
+                    <div class="flex justify-center text-center h-full">
+                        <p id="current-alphabet" class="text-black text-8xl font-semibold mt-10 uppercase">Y</p>
+                    </div>
+                </div>
+                <!-- keyboard -->
+                <div id="keyboard-area" class="text-lg font-bold">
+                    <div class="my-1 flex w-full justify-center gap-1 ">
+                        <kbd id="e" class="kbd bg-white">e</kbd>
+                        <kbd id="w" class="kbd bg-white">w</kbd>
+                        <kbd id="q" class="kbd bg-white">q</kbd>
+                        <kbd id="r" class="kbd bg-white">r</kbd>
+                        <kbd id="t" class="kbd bg-white">t</kbd>
+                        <kbd id="y" class="kbd bg-white">y</kbd>
+                        <kbd id="u" class="kbd bg-white">u</kbd>
+                        <kbd id="i" class="kbd bg-white">i</kbd>
+                        <kbd id="o" class="kbd bg-white">o</kbd>
+                        <kbd id="p" class="kbd bg-white">p</kbd>
+                    </div>
+                    <div class="my-1 flex w-full justify-center gap-1">
+                        <kbd id="a" class="kbd bg-white">a</kbd>
+                        <kbd id="s" class="kbd bg-white">s</kbd>
+                        <kbd id="d" class="kbd bg-white">d</kbd>
+                        <kbd id="f" class="kbd bg-white">f</kbd>
+                        <kbd id="g" class="kbd bg-white">g</kbd>
+                        <kbd id="h" class="kbd bg-white">h</kbd>
+                        <kbd id="j" class="kbd bg-white">j</kbd>
+                        <kbd id="k" class="kbd bg-white">k</kbd>
+                        <kbd id="l" class="kbd bg-white">l</kbd>
+                    </div>
+                    <div class="my-1 flex w-full justify-center gap-1">
+                        <kbd id="z" class="kbd bg-white">z</kbd>
+                        <kbd id="x" class="kbd bg-white">x</kbd>
+                        <kbd id="c" class="kbd bg-white">c</kbd>
+                        <kbd id="v" class="kbd bg-white">v</kbd>
+                        <kbd id="b" class="kbd bg-white">b</kbd>
+                        <kbd id="n" class="kbd bg-white">n</kbd>
+                        <kbd id="m" class="kbd bg-white">m</kbd>
+                        <kbd id="/" class="kbd bg-white">/</kbd>
+                    </div>
+                </div>
+                <!--  -->
+
+                <!-- HUD -->
+                <div class="flex justify-between w-full mx-auto ">
+                    <!-- display life -->
+                    <button class="btn px-4 rounded-full bg-purple-500 items-center justify-center mx-52 text-white">
+                        Life
+                        <img src="./images/Group 23.svg" alt="">
+                        <span id="current-life">5</span>
+                    </button>
+                    <!-- display score -->
+                    <button class="btn px-4 rounded-full bg-[#360490] items-center justify-center mx-52 text-white">
+                        Score
+                        <img src="./images//monetization_on.svg" alt="">
+                        <span id="current-score">0</span>
+                    </button>
+
+                    <!-- WPM -->
+                    <button class="btn px-4 rounded-full bg-[#360490] items-center justify-center mx-52 text-white">
+                        wps: 
+                        <span id="current-wps">0</span>
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- playground end -->
+        <section class="score flex justify-center items-center min-h-screen hidden">
+            <div class="text-center space-y-6 bg-[#FFFFFF33] p-4 rounded-lg">
+                <h1 class="text-8xl text-white">
+                    <span class="font-extrabold">Score: </span>
+                    <span>14</span>
+                </h1>
+                <button class="btn my-4">Play again</button>
+                <p class="text-white">Practice makes you pro</p>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- node js -->
+
+    <script src="./script/alpha.js"></script>
+    <script src="./script/utility.js"></script>
+</body>
+
+</html>
