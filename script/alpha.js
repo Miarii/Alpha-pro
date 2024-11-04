@@ -12,7 +12,14 @@
 function handleKeyboardKeyupEvent(event) {
     // get the key pressed by the player
     const pressedKey = event.key
-    console.log('pressed key is', pressedKey)
+    // console.log('pressed key is', pressedKey)
+
+    // stop the game if pressed key is escape
+    if (pressedKey === 'Escape') {
+        gameOver()
+        return
+    }
+
 
     // get the expected to press
     const currentAlphabetElement = document.getElementById('current-alphabet')
@@ -63,8 +70,7 @@ function handleKeyboardKeyupEvent(event) {
         setTextElementValueById('current-life', udatedLife)
 
         if(udatedLife === 0){
-            alert('Game Over')
-            window.location.reload()
+            gameOver()
         }
 
 
@@ -91,5 +97,36 @@ function continueGame() {
 function play() {
     hideElementById("home-screen")
     showElementById("playgroundx")
+    continueGame()
+}
+
+function gameOver() {
+    hideElementById("playgroundx")
+    showElementById("game-over")
+    
+    // update the score
+    const currentScore = getTextElementValueById('current-score')
+    // console.log('last score', currentScore)
+    setTextElementValueById('scoreBoard', currentScore)
+
+
+    // clear the last alphabet
+    const currentAlphabetElement = getElementTextById('current-alphabet')
+    // console.log('last alphabet', currentAlphabetElement)
+    removeBackgroundColorById(currentAlphabetElement)
+    
+}
+
+function playAgain() {
+
+
+    hideElementById("home-screen")
+    hideElementById("game-over")
+    showElementById("playgroundx")
+
+    // reset score and life
+    setTextElementValueById('current-score', 0)
+    setTextElementValueById('current-life', 5)
+
     continueGame()
 }
