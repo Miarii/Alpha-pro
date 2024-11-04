@@ -52,6 +52,3 @@ function getRandomAlphabet() {
 // words per second
 // add words per second
 
-const typingArea = document.getElementById('keyboard-area')
-const wpsDisplay = document.getElementById('current-wps')
-
